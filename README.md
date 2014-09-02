@@ -1,4 +1,4 @@
-# Ben keith's dotfiles
+# Ben Keith's dotfiles
 
 I make no guarantee that any of this will be useful to you at any given time, or that it will work on your system. 
 
