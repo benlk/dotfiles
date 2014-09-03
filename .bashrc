@@ -110,3 +110,4 @@ alias gcm="git commit -m"
 alias g="gedit"
 
 alias ?="bc <<<"
+alias size="du -h"
