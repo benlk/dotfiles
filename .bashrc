@@ -82,7 +82,7 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -h --group-directories-first'
+    alias ls='ls -hG'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -90,12 +90,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 else
-    alias ls='ls -CF --color=auto -h --group-directories-first'
+    alias ls='ls -CFG -h'
 fi
 
-alias ll='ls -AlF --color=auto -h --group-directories-first'
-alias la='ls -A --color=auto -h --group-directories-first'
-alias l='ls -CF --color=auto -h --group-directories-first'
+alias ll='ls -AlFG -h'
+alias la='ls -AhG'
+alias l='ls -CFGh'
 
 alias v='vim'
 
