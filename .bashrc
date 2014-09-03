@@ -89,7 +89,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-elif
+else
     alias ls='ls -CF --color=auto -h --group-directories-first'
 fi
 

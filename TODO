@@ -1,0 +1,1 @@
+- OSX uses ls -G instead of ls --color. Need to detect OSX in bashrc and use OSX-specific code. 
