@@ -111,3 +111,27 @@ alias g="gedit"
 
 alias ?="bc <<<"
 alias size="du -h"
+alias ..="cd .."
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        # ...
+	continue
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+        # Mac OSX
+	alias o='open'
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+        # POSIX compatibility layer and Linux environment emulation for Windows
+	continue
+elif [[ "$OSTYPE" == "msys" ]]; then
+        # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+	continue
+elif [[ "$OSTYPE" == "win32" ]]; then
+        # I'm not sure this can happen.
+	continue
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+        # ...
+	continue
+else
+        # Unknown.
+	continue
+fi
