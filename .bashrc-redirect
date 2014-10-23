@@ -1,2 +1,4 @@
+# placed in ~/.bashrc
+
 PS1="\\u@\h \\W \\$ "
-source /Users/benkeith/.dotfiles/.bashrc
+source .dotfiles/.bashrc

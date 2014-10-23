@@ -1,7 +1,7 @@
 # /bin/bash
 
-cp ../.bashrc ../.bashrc.bak
-cp ./.bashrc-redirect ../.bashrc
+cp ~/.bashrc ~/.bashrc.bak
+cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         # ...

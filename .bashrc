@@ -1,6 +1,7 @@
 # Ben Keith's bashrc.
 #
 # May break your system. Not guaranteed to work on all computers. 
+# many parts copied from Ubuntu defaults. Other parts copied from paradigm/dotfiles
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
@@ -77,48 +78,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-### Aliases
+### Aliases and other functions
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -hG'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-else
-    alias ls='ls -CFG -h'
-fi
-
-alias ll='ls -AlFG -h'
-alias la='ls -AhG'
-alias l='ls -CFGh'
-
-alias v='vim'
-
-alias day="date&&ddate"
-
-alias gs="git status"
-alias gr="git remote"
-alias gd="git diff"
-alias gc="git commit"
-alias gcam="git commit -am"
-alias gcm="git commit -m"
-alias g="gedit"
-
-alias ?="bc <<<"
-alias size="du -h"
-alias ..="cd .."
+source ~/.dotfiles/.bashrc-general
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         # ...
-	continue
+	source ~/.dotfiles/.bashrc-linux
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
-	alias o='open'
+    source ~/.dotfiles/.bashrc-osx
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 	continue

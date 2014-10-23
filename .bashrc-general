@@ -1,0 +1,23 @@
+function rsize() { 
+	curl -o /tmp/rsize.pdf $1 && du -h /tmp/rsize.pdf && rm /tmp/rsize.pdf ;
+}
+
+alias ll='ls -AlFG -h'
+alias la='ls -AhG'
+alias l='ls -CFGh'
+
+alias v='vim'
+
+alias day="date&&ddate"
+
+alias gs="git status"
+alias gr="git remote"
+alias gd="git diff"
+alias gc="git commit"
+alias gcam="git commit -am"
+alias gcm="git commit -m"
+alias g="gedit"
+
+alias ?="bc <<<"
+alias size="du -h"
+alias ..="cd .."
