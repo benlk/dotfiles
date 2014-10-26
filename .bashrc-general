@@ -2,6 +2,9 @@ function rsize() {
 	curl -o /tmp/rsize.pdf $1 && du -h /tmp/rsize.pdf && rm /tmp/rsize.pdf ;
 }
 
+# http://lcamtuf.blogspot.com/2014/10/psa-dont-run-strings-on-untrusted-files.html
+alias strings='strings -a'
+
 alias ll='ls -AlFG -h'
 alias la='ls -AhG'
 alias l='ls -CFGh'
