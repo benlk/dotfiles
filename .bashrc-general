@@ -14,7 +14,7 @@ alias v='vim'
 alias day="date&&ddate"
 
 alias gs="git status"
-alias gr="git remote"
+alias gr="git remote -v"
 alias gd="git diff"
 alias gc="git commit"
 alias gcam="git commit -am"
