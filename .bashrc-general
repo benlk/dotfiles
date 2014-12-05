@@ -24,3 +24,6 @@ alias g="gedit"
 alias ?="bc <<<"
 alias size="du -h"
 alias ..="cd .."
+
+# virtualenv
+alias workoff="deactivate"
