@@ -1,6 +1,12 @@
 function rsize() { 
 	curl -o /tmp/rsize.pdf $1 && du -h /tmp/rsize.pdf && rm /tmp/rsize.pdf ;
 }
+export -f rsize
+
+function journal() {
+	vim $( date +%Y-%m-%d ).md ;
+}
+export -f journal
 
 # http://lcamtuf.blogspot.com/2014/10/psa-dont-run-strings-on-untrusted-files.html
 alias strings='strings -a'
