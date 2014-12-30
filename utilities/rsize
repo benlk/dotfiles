@@ -1,0 +1,2 @@
+#! /bin/bash
+curl -o /tmp/rsize.pdf $1 && du -h /tmp/rsize.pdf && rm /tmp/rsize.pdf ;

@@ -1,0 +1,15 @@
+#! /bin/sh
+
+date="$( date +%Y-%m-%d )"
+file="$date.md"
+
+echo $date
+echo $file
+
+if [ -f $file ]
+then
+    vim $file
+else
+    echo "# $date" > $file
+    vim $file
+fi
