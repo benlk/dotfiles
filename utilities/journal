@@ -3,13 +3,20 @@
 date="$( date +%Y-%m-%d )"
 file="$date.md"
 
-echo $date
-echo $file
-
 if [ -f $file ]
 then
+	# file exists
+	echo "$file already exists; opening\n"
     vim $file
+elif [ -f _template.md ]
+then
+	echo "Creating $file from _template.md\n"
+    sed -eE "s/{{DATE}}/$date" <_template.md >$file
 else
+	# file does not yet exist
+	echo "Creating $file from scratch\n"
     echo "# $date" > $file
     vim $file
 fi
+
+export -f journal

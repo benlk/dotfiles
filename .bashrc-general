@@ -1,5 +1,5 @@
 # This is where I put the other commands I want to use.
-PATH=$PATH:$HOME/.dotfiles/utilities
+export PATH=$PATH:$HOME/.dotfiles/utilities
 
 # http://lcamtuf.blogspot.com/2014/10/psa-dont-run-strings-on-untrusted-files.html
 alias strings='strings -a'
