@@ -1,4 +1,10 @@
 #! /bin/sh
+# Creates a YYYY-MM-DD.md file with the date at the top, or in the place of [{DATE}] in _template.md. 
+
+# TODO: 
+# - getopts -h option for adding a timestamp
+# - getopts -t templatefile.md for choosing a template
+# - getopts -b blank no-template option
 
 date="$( date +%Y-%m-%d )"
 file="$date.md"
@@ -7,16 +13,15 @@ if [ -f $file ]
 then
 	# file exists
 	echo "$file already exists; opening\n"
-    vim $file
 elif [ -f _template.md ]
 then
 	echo "Creating $file from _template.md\n"
-    sed -eE "s/{{DATE}}/$date" <_template.md >$file
+    sed -e "s/{{DATE}}/$date/g" <_template.md >$file
 else
 	# file does not yet exist
 	echo "Creating $file from scratch\n"
     echo "# $date" > $file
-    vim $file
 fi
 
-export -f journal
+
+$EDITOR $file
