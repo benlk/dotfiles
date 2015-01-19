@@ -25,4 +25,8 @@ alias size="du -h"
 alias ..="cd .."
 
 # virtualenv
+source /usr/local/bin/virtualenvwrapper.sh
 alias workoff="deactivate"
+
+# For local files
+source $HOME/.dotfiles/.bashrc-local
