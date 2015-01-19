@@ -27,3 +27,4 @@ set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
 set history=50
 set nomodeline
+set mouse=a
