@@ -1,6 +1,6 @@
 # /bin/bash
 
-cp ~/.bashrc ~/.bashrc.bak
+cp ~/.bashrc ~/.bashrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
 
 case "$OSTYPE" in
