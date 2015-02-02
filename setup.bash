@@ -3,6 +3,9 @@
 cp ~/.bashrc ~/.bashrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
 
+cp ~/.vimrc ~/.vimrc.$( date +%Y-%m-%d ).bak
+cp ~/.dotfiles/.vimrc ~/.vimrc
+
 case "$OSTYPE" in
 'linux-gnu') 
     # ...

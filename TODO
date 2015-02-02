@@ -1,2 +1,5 @@
 - OSX uses ls -G instead of ls --color. Need to detect OSX in bashrc and use OSX-specific code. 
 - o alias for xdg-open on linux
+- journal command options, see file
+	http://wiki.bash-hackers.org/howto/getopts_tutorial
+	https://stackoverflow.com/questions/402377/using-getopts-in-bash-shell-script-to-get-long-and-short-command-line-options#402410
