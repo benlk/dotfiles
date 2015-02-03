@@ -1,0 +1,3 @@
+[submodule "utilities/curl-rebuild"]
+	path = utilities/curl-rebuild
+	url = https://gist.github.com/67d68631fce3d63505da.git

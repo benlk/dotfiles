@@ -13,3 +13,5 @@ else
 fi
 
 alias o='xdg-open'
+alias pbpaste=`xclip -selection clipboard -o`
+alias pbcopy=`xclip -i`
