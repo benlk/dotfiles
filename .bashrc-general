@@ -24,6 +24,8 @@ alias ?="bc <<<"
 alias size="du -h"
 alias ..="cd .."
 
+alias pbsort='pbpaste | sort | pbcopy'
+
 # virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 alias workoff="deactivate"
