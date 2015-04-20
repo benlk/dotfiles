@@ -6,9 +6,13 @@ cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
 cp ~/.vimrc ~/.vimrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.vimrc-redirect ~/.vimrc
 
+mkdir ~/.vim/plugin/
+wget https://github.com/luochen1990/rainbow/blob/master/plugin/rainbow.vim ~/.vim/plugin/rainbow.vim
+
 case "$OSTYPE" in
 'linux-gnu') 
     # ...
+    cp .speedswapper ../.Xmodmap
     ;;
 'darwin')
     # Mac OSX
