@@ -21,9 +21,16 @@ set ruler
 set background=dark
 " If run in a terminal, set the terminal title
 set title
+
 " set tab width to 4
 set tabstop=4
 set shiftwidth=4
+" Exceptions:
+autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType python setlocal expandtab
+autocmd FileType mkd setlocal noautoindent
+
 " Enable wordwrap.
 set textwidth=0 wrap linebreak
 " Enable unicode characters.  This is needed for 'listchars' below.
@@ -48,6 +55,7 @@ set nomodeline
 
 set printoptions=paper:letter
 set ruler
+set showmode
 
 nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
@@ -62,8 +70,12 @@ set tw=0
 
 " Show trailing characters
 set list
-set lcs=tab:»·
+set lcs=tab:»-
 set lcs+=trail:·
+
+" Rainbow parenthesis
+" copied from J3RN/vim-config
+let g:rainbow_active = 1
 
 " A note on autocompletion: ^x ^o
 " <li>ex</
