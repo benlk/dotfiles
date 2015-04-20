@@ -7,6 +7,7 @@ alias strings='strings -a'
 alias ll='ls -AlFG -h'
 alias la='ls -AhG'
 alias l='ls -CFGh'
+alias lsimg="find . -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image'"
 
 alias v='vim'
 
@@ -25,6 +26,7 @@ alias size="du -h"
 alias ..="cd .."
 
 alias pbsort='pbpaste | sort | pbcopy'
+alias pbwc='pbpaste | wc'
 
 # virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
