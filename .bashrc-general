@@ -19,6 +19,8 @@ alias gd="git diff"
 alias gc="git commit"
 alias gcam="git commit -am"
 alias gcm="git commit -m"
+alias gsup="git submodule update --init --recursive"
+
 alias g="gedit"
 
 alias ?="bc <<<"
