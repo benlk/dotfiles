@@ -10,6 +10,7 @@ alias l='ls -CFGh'
 alias lsimg="find . -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image'"
 
 alias v='vim'
+alias :e='vim'
 
 alias day="date&&ddate"
 
