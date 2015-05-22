@@ -10,6 +10,8 @@ defaults write com.apple.finder AppleShowAllFiles TRUE
 defaults write com.apple.finder EmptyTrashSecurely '1'
 defaults write com.apple.Terminal. FocusFollowsMouse -string YES
 
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 # Things you will also want to do:
 # - set Terminal to use Option as a meta key, so that it sends alt keycodes
 # - set up a terminal theme that looks good
