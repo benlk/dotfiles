@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Making .bashrc work
-echo "source .bashrc" > ~/.bash_profile
+echo "source ~/.bashrc" > ~/.bash_profile
 
 # OSX defaults
 defaults write com.apple.TextEdit CorrectSpellingAutomatically '0'
