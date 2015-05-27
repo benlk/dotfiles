@@ -22,6 +22,10 @@ set background=dark
 " If run in a terminal, set the terminal title
 set title
 
+" Enable syntax highlighting
+" Also enables filetype detection
+syntax on
+
 " set tab width to 4
 set tabstop=4
 set shiftwidth=4
