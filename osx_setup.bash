@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This assumes that you have already installed git and xcode. How else would you have git clone'd this repo?
+
 # Making .bashrc work
 echo "source ~/.bashrc" > ~/.bash_profile
 
