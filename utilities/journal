@@ -35,10 +35,10 @@ fi
 if [ -f $file ]
 then
 	# file exists
-	echo "$file already exists; opening\n"
+	echo "$file already exists; opening"
 elif [ -f _template.md ]
 then
-	echo "Creating $file from _template.md\n"
+	echo "Creating $file from _template.md"
 	# Leaving in the legacy $date for legacy purposes, but now you can use date formats accepted by date (1)
 	sed -e "s/{{DATE}}/$date/g" <_template.md >$file
 	formats=$( grep -Eo '{{[A-Za-z_%\/:-]+}}' $file | grep -Eo '[A-Za-z_%\/:-]+' )
@@ -51,7 +51,7 @@ then
 
 else
 	# Template file does not yet exist
-	echo "Creating $file from scratch\n"
+	echo "Creating $file from scratch"
 	echo "# $date" > $file
 fi
 
