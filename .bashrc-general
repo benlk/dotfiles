@@ -38,3 +38,9 @@ alias workoff="deactivate"
 
 # For local files
 source $HOME/.dotfiles/.bashrc-local
+
+# vimisms
+alias wq="echo 'Did you mean to exit? run that command instead.'"
+
+# To start a local plain http server
+alias servethis="python -m SimpleHTTPServer 8081"
