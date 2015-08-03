@@ -14,6 +14,11 @@ defaults write com.apple.Terminal. FocusFollowsMouse -string YES
 
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
+# Screenshot things!
+defaults write com.apple.screencapture disable-shadow -bool true
+#mkdir ~/Screenshots
+#defaults write com.apple.screencapture location ~/Screenshots
+
 # Things you will also want to do:
 # - set Terminal to use Option as a meta key, so that it sends alt keycodes
 # - set up a terminal theme that looks good
