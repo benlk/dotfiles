@@ -4,6 +4,8 @@
 
 # Making .bashrc work
 echo "source ~/.bashrc" > ~/.bash_profile
+cp ~/.dotfiles/.inputrc ~/.inputrc
+cp ~/.dotfiles/.profile ~/.profile
 
 # OSX defaults
 defaults write com.apple.TextEdit CorrectSpellingAutomatically '0'
