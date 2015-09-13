@@ -32,9 +32,6 @@ alias ..="cd .."
 alias pbsort='pbpaste | sort | pbcopy'
 alias pbwc='pbpaste | wc'
 
-# virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-alias workoff="deactivate"
 
 # For local files
 source $HOME/.dotfiles/.bashrc-local
