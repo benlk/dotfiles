@@ -6,8 +6,9 @@ cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
 cp ~/.vimrc ~/.vimrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.vimrc-redirect ~/.vimrc
 
+mkdir ~/.vim/
 mkdir ~/.vim/plugin/
-curl https://github.com/luochen1990/rainbow/blob/master/plugin/rainbow.vim -o ~/.vim/plugin/rainbow.vim
+curl https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow.vim -o ~/.vim/plugin/rainbow.vim
 
 case "$OSTYPE" in
 'linux-gnu') 
