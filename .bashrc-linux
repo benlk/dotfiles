@@ -19,3 +19,4 @@ alias o='xdg-open 2>/dev/null'
 
 alias pbpaste='xclip -selection clipboard -o'
 alias pbcopy='xclip -i'
+alias g="gedit"

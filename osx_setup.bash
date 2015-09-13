@@ -4,6 +4,8 @@
 
 # Making .bashrc work
 echo "source ~/.bashrc" > ~/.bash_profile
+cp ~/.dotfiles/.inputrc ~/.inputrc
+cp ~/.dotfiles/.profile ~/.profile
 
 # OSX defaults
 defaults write com.apple.TextEdit CorrectSpellingAutomatically '0'
@@ -13,6 +15,11 @@ defaults write com.apple.finder EmptyTrashSecurely '1'
 defaults write com.apple.Terminal. FocusFollowsMouse -string YES
 
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+# Screenshot things!
+defaults write com.apple.screencapture disable-shadow -bool true
+#mkdir ~/Screenshots
+#defaults write com.apple.screencapture location ~/Screenshots
 
 # Things you will also want to do:
 # - set Terminal to use Option as a meta key, so that it sends alt keycodes
