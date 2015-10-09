@@ -7,4 +7,4 @@ then
 	exit
 fi
 
-find . -type f -name "*.$1" -print0 | xargs -0 grep -0 $2
+find . -type f -name "*.$1" -print0 | xargs -0 grep --color=auto -0 $2
