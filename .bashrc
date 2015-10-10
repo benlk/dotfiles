@@ -8,10 +8,14 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-### Copying from paradigm/dotfiles:
+### Shopt
 
 # Update $LINES and $COLUMNS when terminal size changes.
 shopt -s checkwinsize
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
 
 # Set the default text editor.
 if which vim >/dev/null 2>&1
@@ -38,6 +42,11 @@ shopt -s histappend
 case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -78,11 +87,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 ### Aliases and other functions
 
 source ~/.dotfiles/.bashrc-general
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ $OSTYPE == *"linux-gnu"* ]]; then
         # ...
 	source ~/.dotfiles/.bashrc-linux
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -90,17 +101,17 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.dotfiles/.bashrc-osx
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
-	continue
+	echo "There is no cygwin-specific .bashrc file in ~/.dotfiles."
 elif [[ "$OSTYPE" == "msys" ]]; then
         # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-	continue
+	echo "There is no msys-specific .bashrc file in ~/.dotfiles."
 elif [[ "$OSTYPE" == "win32" ]]; then
         # I'm not sure this can happen.
-	continue
+	echo "There is no win32-specific .bashrc file in ~/.dotfiles."
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
         # ...
-	continue
+	echo "There is no freebsd-specific .bashrc file in ~/.dotfiles."
 else
         # Unknown.
-	continue
+	echo "What sort of system is this? Check out ~/.dotfiles/.bashrc and then send the dotfiles creator an email, please."
 fi

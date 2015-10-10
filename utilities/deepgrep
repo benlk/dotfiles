@@ -1,0 +1,10 @@
+#! /bin/bash
+# Useful for searching deep in the Largo submodules for things
+
+if [ -z $1 ] || [ -z $2 ];
+then
+	echo "Usage: deepgrep <filetype> <string that is being searched for>"
+	exit
+fi
+
+find . -type f -name "*.$1" -print0 | xargs -0 grep --color=auto -0 $2

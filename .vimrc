@@ -22,11 +22,16 @@ set background=dark
 " If run in a terminal, set the terminal title
 set title
 
+" Enable syntax highlighting
+" Also enables filetype detection
+syntax on
+
 " set tab width to 4
 set tabstop=4
 set shiftwidth=4
 " Exceptions:
 autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType less setf css
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType python setlocal expandtab
 autocmd FileType mkd setlocal noautoindent
@@ -56,6 +61,7 @@ set nomodeline
 set printoptions=paper:letter
 set ruler
 set showmode
+set number
 
 nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)

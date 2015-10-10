@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # Creates a YYYY-MM-DD.md file with the date at the top, or in the place of [{DATE}] in _template.md. 
 
 # TODO: 
@@ -6,22 +6,53 @@
 # - getopts -t templatefile.md for choosing a template
 # - getopts -b blank no-template option
 
-date="$( date +%Y-%m-%d )"
-file="$date.md"
+date="$( date +%Y-%m-%d )" # For filenames and legacy {{DATE}}
+
+#
+# Open either %Y-%m-%d.md or %Y-%m-&d- user-specified .md
+#
+# First, create a list of files starting with $date
+shopt -s nullglob
+# trying to use glob expansion to fill the array with the files. 
+files=(./$date*.md)
+if [ ${#files[*]} -gt 1 ]
+then
+	echo "There are more than one file for $date"
+	echo "Open one of these with a text editor:"
+	echo ${files[@]}
+	exit 0
+	# There are too many files, this script was not built to handle them.
+elif [ ${#files[*]} -eq 1 ]
+then
+	file=${files[0]}
+elif [ -n "$1" ]
+then
+	file="$date-$1.md"
+else 
+	file="$date.md"
+fi
 
 if [ -f $file ]
 then
 	# file exists
-	echo "$file already exists; opening\n"
+	echo "$file already exists; opening"
 elif [ -f _template.md ]
 then
-	echo "Creating $file from _template.md\n"
-    sed -e "s/{{DATE}}/$date/g" <_template.md >$file
-else
-	# file does not yet exist
-	echo "Creating $file from scratch\n"
-    echo "# $date" > $file
-fi
+	echo "Creating $file from _template.md"
+	# Leaving in the legacy $date for legacy purposes, but now you can use date formats accepted by date (1)
+	sed -e "s/{{DATE}}/$date/g" <_template.md >$file
+	formats=$( grep -Eo '{{[A-Za-z_%\/:-]+}}' $file | grep -Eo '[A-Za-z_%\/:-]+' )
 
+	# This is only iterating once, and I don't know why.Even if the array has three elements in it.
+	for format in $formats
+	do
+		sed -i '' -e "s/{{$format}}/$(date +$format)/" $file
+	done
+
+else
+	# Template file does not yet exist
+	echo "Creating $file from scratch"
+	echo "# $date" > $file
+fi
 
 $EDITOR $file
