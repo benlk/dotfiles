@@ -23,6 +23,7 @@ alias gcm="git commit -m"
 alias gsup="git submodule update --init --recursive"
 alias gg="git grep -n"
 
+alias dg="deepgrep"
 
 alias ?="bc <<<"
 alias size="du -h"

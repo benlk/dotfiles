@@ -2,6 +2,7 @@
 
 cp ~/.bashrc ~/.bashrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.bashrc-redirect ~/.bashrc
+touch ~/.dotfiles/.bashrc-local
 
 cp ~/.vimrc ~/.vimrc.$( date +%Y-%m-%d ).bak
 cp ~/.dotfiles/.vimrc-redirect ~/.vimrc
