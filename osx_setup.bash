@@ -50,6 +50,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 sudo defaults write /Library/Preferences/com.apple.crypto RSAMaxKeySize -int 8192
 sudo defaults write /Library/Preferences/com.apple.security RSAMaxKeySize -int 8192
 
+# Restart Finder with these new settings
 killall Finder
 
 # To reverse this,
