@@ -33,6 +33,8 @@ alias pbsort='pbpaste | sort | pbcopy'
 alias pbwc='pbpaste | wc'
 alias pbclear='echo "" | pbcopy'
 
+alias workoff='deactivate'
+
 
 # For local files
 source $HOME/.dotfiles/.bashrc-local
