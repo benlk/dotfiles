@@ -19,3 +19,5 @@ alias o='open'
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+alias pbclear="echo '' | pbcopy; echo '' | pbcopy --pboard ruler; echo '' | pbcopy --pboard find; echo '' | pbcopy --pboard font"

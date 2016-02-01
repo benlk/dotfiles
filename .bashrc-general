@@ -35,6 +35,8 @@ alias pbclear='echo "" | pbcopy'
 
 alias workoff='deactivate'
 
+alias bashrc='source ~/.bashrc'
+
 
 # For local files
 source $HOME/.dotfiles/.bashrc-local
