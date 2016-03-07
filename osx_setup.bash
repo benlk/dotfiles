@@ -7,6 +7,9 @@ echo "source ~/.bashrc" > ~/.bash_profile
 cp ~/.dotfiles/.inputrc ~/.inputrc
 cp ~/.dotfiles/.profile ~/.profile
 
+# git settings
+git config --global alias.branches 'branch --list'
+
 #
 # OSX defaults
 #

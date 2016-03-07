@@ -15,6 +15,7 @@ case "$OSTYPE" in
 'linux-gnu') 
     # ...
     cp .speedswapper ../.Xmodmap
+    git config --global alias.branches 'branch --list'
     ;;
 'darwin')
     # Mac OSX
