@@ -31,7 +31,9 @@ set tabstop=4
 set shiftwidth=4
 " Exceptions:
 autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType less setf css
+autocmd BufNewFile,BufRead *.less setf css " not the recommended way to do this
+	" copied from https://stackoverflow.com/questions/3083474/how-to-make-less-files-to-have-css-syntax-highlight-in-vim/9550944#9550944
+	" should use http://vimdoc.sourceforge.net/htmldoc/filetype.html#ftdetect instead
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType python setlocal expandtab
 autocmd FileType mkd setlocal noautoindent
