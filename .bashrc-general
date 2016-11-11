@@ -32,7 +32,6 @@ alias ..="cd .."
 alias pbsort='pbpaste | sort | pbcopy'
 alias pbwc='pbpaste | wc'
 alias pbclear='echo "" | pbcopy'
-alias pbvim='pbpaste | vim -'
 
 alias workoff='deactivate'
 
