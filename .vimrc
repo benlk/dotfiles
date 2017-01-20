@@ -73,6 +73,10 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 " at the start of a line following a one.
 set fo=cqrt
 
+" Change default so that `-` is a comment on multiple lines
+" default: comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ [\ ],b:-
+
 " Don't force text width
 set tw=0
 
