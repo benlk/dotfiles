@@ -1,0 +1,40 @@
+#! /bin/bash
+# A command-line period tracker
+# for Ilzolende
+#
+# Usage: 
+# $ period
+#
+# What it actually does:
+#     echoes the current date to a CSV in a specified file
+#     nothing else
+#
+# It's named period because it tracks periods,
+# be they menstrual or otherwise.
+# See copyright notice at end of file
+
+FILE_PATH=~/period-cli.csv
+
+function ensure_file_exists() {
+	if [[ ! -f $FILE_PATH ]]
+	then
+		touch $FILE_PATH;
+		echo "# Format" >> $FILE_PATH;
+		echo "# date," >> $FILE_PATH;
+	fi
+}
+
+function get_date() {
+	echo $( date +%Y-%m-%d );
+}
+
+function append_date() {
+	echo $(get_date)",">> $FILE_PATH;
+}
+
+ensure_file_exists;
+append_date;
+
+# This program is hereby released under a Creative Commons Zero
+# license by its author. For terms and conditions, see
+# https://creativecommons.org/choose/zero/?lang=en

@@ -30,7 +30,7 @@ fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 # append to the history file, don't overwrite it

@@ -23,6 +23,7 @@ alias gcm="git commit -m"
 alias gsup="git submodule update --init --recursive"
 alias gg="git grep -n"
 
+alias dg="deepgrep"
 
 alias ?="bc <<<"
 alias size="du -h"
@@ -30,6 +31,11 @@ alias ..="cd .."
 
 alias pbsort='pbpaste | sort | pbcopy'
 alias pbwc='pbpaste | wc'
+alias pbclear='echo "" | pbcopy'
+
+alias workoff='deactivate'
+
+alias bashrc='source ~/.bashrc'
 
 
 # For local files
