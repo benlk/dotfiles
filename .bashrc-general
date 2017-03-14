@@ -37,6 +37,7 @@ alias workoff='deactivate'
 
 alias bashrc='source ~/.bashrc'
 
+alias wifi='vim -R ~/.dotfiles/files/wifi'
 
 # For local files
 source $HOME/.dotfiles/.bashrc-local
