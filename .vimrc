@@ -92,5 +92,8 @@ let g:rainbow_active = 1
 " A note on autocompletion: ^x ^o
 " <li>ex</
 
+" :help abbreviate
+" Abbreviation section! http://vim.wikia.com/wiki/Using_abbreviations
+"
 " php var_log function, see https://github.com/INN/largo/pull/1428
 iab var_log error_log(var_export(, true));<Left><Left><Left><Left><Left><Left><Left><Left><Left>
