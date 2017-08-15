@@ -10,6 +10,7 @@ cp ~/.dotfiles/.vimrc-redirect ~/.vimrc
 mkdir ~/.vim/
 mkdir ~/.vim/plugin/
 curl https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow.vim -o ~/.vim/plugin/rainbow.vim
+curl https://raw.githubusercontent.com/plasticboy/vim-markdown/master/syntax/markdown.vim -o ~/.vim/plugin/markdown.vim
 
 case "$OSTYPE" in
 'linux-gnu') 
