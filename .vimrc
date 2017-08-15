@@ -43,10 +43,13 @@ set textwidth=0 wrap linebreak
 " Enable unicode characters.  This is needed for 'listchars' below.
 set encoding=utf-8
 " Display special characters for certain whitespace situations.
+" And show trailing characters
 set list
-set listchars=trail:·,extends:…,precedes:…,nbsp:&
+set listchars=tab:»-,trail:·,extends:…,precedes:…,nbsp:&
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-au BufRead,BufNewFile *.md,*.markdown,*.mdown set filetype=mkd
+hi SpecialKey ctermfg=102
+" Correct filetype for markdown files
+au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown
 
 
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
@@ -79,11 +82,6 @@ set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ [\ ],b:-
 
 " Don't force text width
 set tw=0
-
-" Show trailing characters
-set list
-set lcs=tab:»-
-set lcs+=trail:·
 
 " Rainbow parenthesis
 " copied from J3RN/vim-config
