@@ -87,6 +87,19 @@ set tw=0
 " copied from J3RN/vim-config
 let g:rainbow_active = 1
 
+" https://github.com/vim-scripts/phpcs.vim
+let g:phpcs_std_list="WordPress"
+let g:phpcs_vcs_type = 'svn' " fake; I use git
+" ^ input mode map
+"   mapped to macbook pause/prev/next
+inoremap <F8>  <ESC>:Phpcs<CR>
+inoremap <F7> <ESC>:cprev<CR>
+inoremap <F9> <ESC>:cnext<CR>
+" ^ normal mode map
+noremap <F8>  <ESC>:Phpcs<CR>
+noremap <F7> <Esc>:cprev<CR>
+noremap <F9> <ESC>:cnext<CR>
+
 " A note on autocompletion: ^x ^o
 " <li>ex</
 
