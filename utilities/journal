@@ -1,7 +1,7 @@
 #! /bin/bash
-# Creates a YYYY-MM-DD.md file with the date at the top, or in the place of [{DATE}] in _template.md. 
+# Creates a YYYY-MM-DD.md file with the date at the top, or in the place of [{DATE}] in _template.md.
 
-# TODO: 
+# TODO:
 # - getopts -h option for adding a timestamp
 # - getopts -t templatefile.md for choosing a template
 # - getopts -b blank no-template option
@@ -15,20 +15,24 @@ date="$( date +%Y-%m-%d )" # For filenames and legacy {{DATE}}
 shopt -s nullglob
 # trying to use glob expansion to fill the array with the files. 
 files=(./$date*.md)
+
 if [ ${#files[*]} -gt 1 ]
 then
+	# There are too many files, this script was not built to handle them.
 	echo "There are more than one file for $date"
 	echo "Open one of these with a text editor:"
 	echo ${files[@]}
 	exit 0
-	# There are too many files, this script was not built to handle them.
 elif [ ${#files[*]} -eq 1 ]
 then
+	# There is one file and it is the right file
 	file=${files[0]}
 elif [ -n "$1" ]
 then
+	# add user-specified file to filename
 	file="$date-$1.md"
 else 
+	# just use the date as the filename
 	file="$date.md"
 fi
 
@@ -39,15 +43,25 @@ then
 elif [ -f _template.md ]
 then
 	echo "Creating $file from _template.md"
+
 	# Leaving in the legacy $date for legacy purposes, but now you can use date formats accepted by date (1)
 	sed -e "s/{{DATE}}/$date/g" <_template.md >$file
-	formats=$( grep -Eo '{{[A-Za-z_%\/:-]+}}' $file | grep -Eo '[A-Za-z_%\/:-]+' )
+	formats=$( grep -Eo '{{[A-Za-z_%\/: -]+}}' $file | grep -Eo '[A-Za-z_%\/: -]+' )
 
-	# This is only iterating once, and I don't know why.Even if the array has three elements in it.
+	# change the IFS item to save hearburn
+	# https://www.cyberciti.biz/tips/handling-filenames-with-spaces-in-bash.html
+	OLDIFS=$IFS
+	IFS=$'\n'
+
+	# This is only iterating once, and I don't know why. Even if the array has three elements in it.
 	for format in $formats
 	do
-		sed -i '' -e "s/{{$format}}/$(date +$format)/" $file
+		pattern="s/{{$format}}/$(date +$format)/"
+		sed -i '' -e $pattern $file
 	done
+
+	# Put this back
+	IFS=$OLDIFS
 
 else
 	# Template file does not yet exist
