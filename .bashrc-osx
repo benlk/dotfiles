@@ -21,3 +21,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 alias pbclear="echo '' | pbcopy; echo '' | pbcopy --pboard ruler; echo '' | pbcopy --pboard find; echo '' | pbcopy --pboard font"
+
+# necessary for GPG signing of Git commits with GPG2 and pinentry, as installed via homebrew
+export GPG_TTY=$(tty)
