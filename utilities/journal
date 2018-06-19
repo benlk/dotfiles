@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+# journal command
 # Creates a YYYY-MM-DD.md file with the date at the top, or in the place of [{DATE}] in _template.md.
 
 # TODO:
@@ -69,4 +70,8 @@ else
 	echo "# $date" > $file
 fi
 
-$EDITOR $file
+if [ "$EDITOR" == "vim" ]; then
+	$EDITOR -c "set nolist nonu" $file
+else
+	$EDITOR $file
+fi
