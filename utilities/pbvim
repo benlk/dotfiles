@@ -1,5 +1,5 @@
 #!/bin/bash
 pbpaste > /tmp/pbvim
-vim /tmp/pbvim
+vim -c "setlocal noeol" /tmp/pbvim
 cat /tmp/pbvim | pbcopy
 rm /tmp/pbvim
