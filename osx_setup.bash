@@ -29,6 +29,8 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Disable autocomplete when hit escape:
+defaults write -g NSUseSpellCheckerForCompletions -bool false
 
 #
 # Chrome settings
