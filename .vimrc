@@ -53,7 +53,7 @@ hi SpecialKey ctermfg=102
 au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown
 
 
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 
 
 let &cpo=s:cpo_save
