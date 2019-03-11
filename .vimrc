@@ -6,8 +6,14 @@
 "
 
 if &cp | set nocp | endif
+
+"
+" Save everything in backup
+"
 let s:cpo_save=&cpo
 set cpo&vim
+
+
 " wildmenu, makes use of the status line to show possible completions of command line commands, file names, and more.
 set wmnu
 
@@ -47,13 +53,20 @@ set encoding=utf-8
 " And show trailing characters
 set list
 set listchars=tab:»-,trail:·,extends:…,precedes:…,nbsp:&
+
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
 hi SpecialKey ctermfg=102
 " Correct filetype for markdown files
 au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown spell
 
 let &cpo=s:cpo_save
 unlet s:cpo_save
+"
+" End cpo_save block
+"
+
+filetype plugin on
 set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
@@ -61,16 +74,15 @@ set history=50
 set nomodeline
 
 set printoptions=paper:letter
-set ruler
 set showmode
 set number
 
-nmap gx <Plug>NetrwBrowseX
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+" nmap gx <Plug>NetrwBrowseX
+" nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 " vim: set ft=vim :
 
 " formatoptions: default is tcq, adding r here to make vim insert a comment leader
-" at the start of a line following a one.
+" at the start of a line following a commented one.
 set fo=cqrt
 
 " Change default so that `-` is a comment on multiple lines
@@ -83,6 +95,8 @@ set tw=0
 " Rainbow parenthesis
 " copied from J3RN/vim-config
 let g:rainbow_active = 1
+let loaded_matchparen = 1
+set showmatch
 
 " https://github.com/vim-scripts/phpcs.vim
 let g:phpcs_std_list="WordPress"
