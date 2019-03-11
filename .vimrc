@@ -50,11 +50,7 @@ set listchars=tab:»-,trail:·,extends:…,precedes:…,nbsp:&
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 hi SpecialKey ctermfg=102
 " Correct filetype for markdown files
-au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown
-
-
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
-
+au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown spell
 
 let &cpo=s:cpo_save
 unlet s:cpo_save
