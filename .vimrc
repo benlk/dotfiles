@@ -31,6 +31,7 @@ set title
 " Enable syntax highlighting
 " Also enables filetype detection
 syntax on
+filetype plugin on
 
 " set tab width to 4
 set tabstop=4
@@ -57,8 +58,6 @@ set listchars=tab:»-,trail:·,extends:…,precedes:…,nbsp:&
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 hi SpecialKey ctermfg=102
-" Correct filetype for markdown files
-au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown set filetype=markdown spell
 
 let &cpo=s:cpo_save
 unlet s:cpo_save
@@ -66,7 +65,6 @@ unlet s:cpo_save
 " End cpo_save block
 "
 
-filetype plugin on
 set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
@@ -88,6 +86,13 @@ set fo=cqrt
 " Change default so that `-` is a comment on multiple lines
 " default: comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ [\ ],b:-
+
+" Correct filetype for markdown files
+au BufNewFile,BufFilePre,BufRead md,markdown,mdown setlocal filetype=markdown
+au FileType markdown spell comments=n:>,b:-\ [\ ],b:-
+
+" Something in vim is being annoying
+au FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,s:<!--,m:\ \ \ \ ,e:-->
 
 " Don't force text width
 set tw=0
