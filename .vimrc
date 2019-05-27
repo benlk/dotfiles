@@ -19,7 +19,7 @@ set wmnu
 
 " When creating a new line, set indentation same as previous line.
 set autoindent
-" Allow i_backspace over indent, eol and start-of-insert
+" Allow i_backspace over indent, eol and start-of-inser
 set backspace=2
 " Highlight search results.
 set hlsearch
@@ -83,13 +83,11 @@ set number
 " at the start of a line following a commented one.
 set fo=cqrt
 
-" Change default so that `-` is a comment on multiple lines
-" default: comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ [\ ],b:-
-
 " Correct filetype for markdown files
-au BufNewFile,BufFilePre,BufRead md,markdown,mdown setlocal filetype=markdown
-au FileType markdown spell comments=n:>,b:-\ [\ ],b:-
+setglobal spell spelllang=en_us
+au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown setlocal filetype=markdown
+au FileType markdown setlocal spell
+au FileType markdown setlocal comments+=n:>,b:-\ [\ ],b:-
 
 " Something in vim is being annoying
 au FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,s:<!--,m:\ \ \ \ ,e:-->
