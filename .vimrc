@@ -97,7 +97,6 @@ set tw=0
 
 " Rainbow parenthesis
 " copied from J3RN/vim-config
-let g:rainbow_active = 1
 let loaded_matchparen = 1
 set showmatch
 
