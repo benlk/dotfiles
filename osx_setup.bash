@@ -42,6 +42,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 #mkdir ~/Screenshots
 #defaults write com.apple.screencapture location ~/Screenshots
 
+# https://medium.com/@jonathan.leitschuh/zoom-zero-day-4-million-webcams-maybe-an-rce-just-get-them-to-visit-your-website-ac75c83f4ef5
+defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
+
 # Things you will also want to do:
 # - set Terminal to use Option as a meta key, so that it sends alt keycodes
 # - set up a terminal theme that looks good
