@@ -22,6 +22,7 @@ alias gcam="git commit -am"
 alias gcm="git commit -m"
 alias gsup="git submodule update --init --recursive"
 alias gg="git grep -n"
+alias ggcon="git grep -n '<<<<<<<'; git grep -n '>>>>>>>'"
 
 alias dg="deepgrep"
 
