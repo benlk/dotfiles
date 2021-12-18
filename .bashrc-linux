@@ -18,6 +18,6 @@ alias o='xdg-open 2>/dev/null'
 #export XDG_UTILS_DEBUG_LEVEL=0
 
 alias pbpaste='xclip -selection clipboard -o'
-alias pbcopy='xclip -i'
+alias pbcopy='xclip -i -selection clipboard'
 alias g="gedit"
 alias bashrc="source ~/.bashrc"

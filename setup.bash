@@ -14,6 +14,9 @@ mkdir -p ~/.vim/plugin/
 curl https://raw.githubusercontent.com/plasticboy/vim-markdown/master/syntax/markdown.vim -o ~/.vim/plugin/markdown.vim
 mkdir -p ~/.vim/syntax/
 curl https://raw.githubusercontent.com/StanAngeloff/php.vim/master/syntax/php.vim -o ~/.vim/syntax/php.vim
+# Vundle
+mkdir -b ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 case "$OSTYPE" in
 'linux-gnu')

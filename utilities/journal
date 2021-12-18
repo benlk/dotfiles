@@ -47,7 +47,7 @@ then
 
 	# Leaving in the legacy $date for legacy purposes, but now you can use date formats accepted by date (1)
 	sed -e "s/{{DATE}}/$date/g" <_template.md >$file
-	formats=$( grep -Eo '{{[A-Za-z_%\/: -]+}}' $file | grep -Eo '[A-Za-z_%\/: -]+' )
+	formats=$( grep -Eo '{{[A-Za-z_%\/:, -]+}}' $file | grep -Eo '[A-Za-z_%\/:, -]+' )
 
 	# change the IFS item to save hearburn
 	# https://www.cyberciti.biz/tips/handling-filenames-with-spaces-in-bash.html

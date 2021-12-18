@@ -30,7 +30,7 @@ set title
 
 " Enable syntax highlighting
 " Also enables filetype detection
-syntax on
+syntax enable
 filetype plugin on
 
 " set tab width to 4
@@ -89,6 +89,11 @@ au BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown setlocal filetype=markd
 au FileType markdown setlocal spell
 au FileType markdown setlocal comments+=n:>,b:-\ [\ ],b:-
 
+" https://github.com/plasticboy/vim-markdown#disable-folding
+let g:vim_markdown_folding_disabled = 1
+" https://github.com/plasticboy/vim-markdown#yaml-front-matter
+let g:vim_markdown_frontmatter = 1
+
 " Something in vim is being annoying
 au FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,s:<!--,m:\ \ \ \ ,e:-->
 
@@ -105,11 +110,11 @@ let g:phpcs_std_list="WordPress"
 let g:phpcs_vcs_type = 'svn' " fake; I use git
 " ^ input mode map
 "   mapped to macbook pause/prev/next
-inoremap <F8>  <ESC>:Phpcs<CR>
+inoremap <F8> <ESC>:Phpcs<CR>
 inoremap <F7> <ESC>:cprev<CR>
 inoremap <F9> <ESC>:cnext<CR>
 " ^ normal mode map
-noremap <F8>  <ESC>:Phpcs<CR>
+noremap <F8> <ESC>:Phpcs<CR>
 noremap <F7> <Esc>:cprev<CR>
 noremap <F9> <ESC>:cnext<CR>
 
@@ -121,3 +126,20 @@ noremap <F9> <ESC>:cnext<CR>
 "
 " php var_log function, see https://github.com/INN/largo/pull/1428
 iab var_log error_log(var_export(, true));<Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+
+" The Vundle chunk
+" https://github.com/VundleVim/Vundle.vim
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Add plugins here
+
+call vundle#end()
+filetype plugin indent on
