@@ -47,4 +47,7 @@ source $HOME/.dotfiles/.bashrc-local
 alias wq="echo 'Did you mean to exit? run that command instead.'"
 
 # To start a local plain http server
-alias servethis="python -m SimpleHTTPServer 8081"
+#alias servethis="python -m SimpleHTTPServer 8081"
+
+# Tabcomplete for cd shall only reference directories
+complete -d cd

@@ -3,7 +3,6 @@
 "
 " More stuff copied from:
 " http://www.guckes.net/vim/setup.html
-"
 
 if &cp | set nocp | endif
 
