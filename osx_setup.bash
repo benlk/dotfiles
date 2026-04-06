@@ -3,6 +3,7 @@
 # This assumes that you have already installed git and xcode. How else would you have git clone'd this repo?
 
 # Making .bashrc work
+echo "export BASH_SILENCE_DEPRECATION_WARNING=1" > ~/.bash_profile
 echo "source ~/.bashrc" > ~/.bash_profile
 cp ~/.dotfiles/.inputrc ~/.inputrc
 cp ~/.dotfiles/.profile ~/.profile
